@@ -157,14 +157,14 @@ footer .links{display:flex;gap:18px;flex-wrap:wrap;margin:14px 0}
 
   <section id="contact">
     <div class="wrap">
-      <h2>상담 신청</h2>
+      <h2>견적 신청</h2>
       <p class="sub">아래 내용을 남겨 주시면 확인 후 연락드리겠습니다.</p>
       <form id="inquiry" novalidate>
         <div><label for="name">이름</label><input id="name" name="name" type="text" maxlength="30" autocomplete="name" required></div>
         <div><label for="phone">연락처</label><input id="phone" name="phone" type="tel" maxlength="20" autocomplete="tel" placeholder="010-0000-0000" required></div>
         <div><label for="message">문의 내용</label><textarea id="message" name="message" maxlength="1000" required></textarea></div>
         <div class="hp" aria-hidden="true"><label>비워 두세요<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-        <button class="btn" type="submit" id="send">상담 신청하기</button>
+        <button class="btn" type="submit" id="send">견적 신청하기</button>
         <div id="msg" role="status"></div>
       </form>
       <p class="ct">전화 <a href="tel:01047337337">010-4733-7337</a> · 이메일 <a href="mailto:cjddbf200@gmail.com">cjddbf200@gmail.com</a></p>
@@ -213,7 +213,7 @@ form.addEventListener("submit", function(e){
     headers: {"Content-Type": "text/plain;charset=utf-8"},
     body: JSON.stringify({name:name, phone:phone, message:message, website:form.website.value})
   }).then(function(r){ return r.json(); }).then(function(res){
-    if(res && res.ok){ show("상담 신청이 접수되었습니다. 곧 연락드리겠습니다.", "ok"); form.reset(); }
+    if(res && res.ok){ show("견적 신청이 접수되었습니다. 곧 연락드리겠습니다.", "ok"); form.reset(); }
     else { show((res && res.error) || "접수에 실패했습니다. 전화로 문의해 주세요.", "err"); }
   }).catch(function(){
     show("접수에 실패했습니다. 잠시 후 다시 시도하거나 전화로 문의해 주세요.", "err");
